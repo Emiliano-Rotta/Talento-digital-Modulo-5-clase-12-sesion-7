@@ -54,10 +54,10 @@ CREATE TABLE DetalleProduccion (
     FechaTermino DATE,
     Bodega_id NUMERIC,
     Produccion_id NUMERIC,
-    Maquinaria_id NUMERIC,  -- Nueva columna agregada
+    Receta_id NUMERIC,  -- Nueva columna agregada
     FOREIGN KEY (Bodega_id) REFERENCES Bodega(id),
     FOREIGN KEY (Produccion_id) REFERENCES Produccion(id),
-    FOREIGN KEY (Maquinaria_id) REFERENCES Maquinaria(id)  -- Nueva FK a la tabla Maquinaria
+    FOREIGN KEY (Receta_id) REFERENCES Receta(id)  -- Nueva FK a la tabla Receta
 );
 
 Tabla: Bodega
@@ -150,8 +150,6 @@ CREATE TABLE DetalleCompra (
 Tabla: Maquinaria
 --Esta es la tabla nueva que faltaba agregar.
 
-sql
-Copiar código
 CREATE TABLE Maquinaria (
     id NUMERIC PRIMARY KEY,
     Nombre VARCHAR,
